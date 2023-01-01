@@ -1,0 +1,203 @@
+
+
+$main-color:rgb(245, 240, 235);
+$sub-color:rgb(199, 194, 189);
+$border-color:#d7c5c5;
+$white:#fff;
+$title-color:rgb(59, 65, 65);
+$thin-border:2px solid aliceblue;
+$blue-color:#2196f3;
+$thick-border:2px solid $blue-color;
+$transition:.5s;
+.singlepage {
+    padding-top: 40px;
+    background-color: $white;
+    .container{
+        display: flex;
+        gap:20px;
+        justify-content: center;
+        align-items: center;
+        // productSlider
+        .productSlider{
+            background-color: aliceblue;
+            align-self: start;
+            position:relative;
+            & .before,
+            & .after{
+                content:"^";
+                position: absolute;
+                left:0;
+                width: 100%;
+                height: 110px;
+                background-color: rgb(0 0 0 /10%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                &:hover{
+                    background:linear-gradient(top ,black,red); 
+                }
+
+            }
+            & .before{
+                top:0;
+            }
+            & .after{
+                bottom:0;
+            }
+            & .before:hover,
+            & .after:hover{
+                background-color: rgb(0 0 0 /40%);
+            }
+            .box{
+                border:1px solid $border-color;
+                background-color: $main-color;
+                padding: 7px;
+                border-radius: 4px;
+                transition: all $transition;
+                &:hover{
+                    border:$thick-border;
+                }
+                img{
+                    width: 120px;
+                }
+                &:not(:last-child){
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .productImage{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $main-color;
+            padding: 20px;
+            img{
+                width: 325px;
+                filter: drop-shadow(0 0 10px rgb(0 0 0 /30%));
+            }
+        }
+        .productInfo{
+            border-right: $thin-border;
+            padding-right: 20px;
+            .mark_Seller{
+                color:$sub-color;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+            .product_description{
+                font-weight: 500;
+                color:$title-color;
+                margin-bottom: 14px;
+
+            }
+            .model{
+                color:$sub-color;
+                margin: 15px 0;
+                span  {
+                    background-color: rgb(79, 218, 79);
+                    color: $white;
+                    border-radius: 10px;
+                    padding:3px;
+                    display: inline-block;
+                    margin: 0 4px;
+                }
+            }
+            .price{
+                color:$sub-color;
+                margin: 15px 0;
+                display: flex;
+                align-items: center;
+                span{
+                    font-weight: bold;
+                    font-size: 30px;
+                    color:$title-color;
+                    text-transform: uppercase;
+                }
+            }
+            .productQuantity{
+                margin-bottom: 15px;
+                border-radius: 5px;
+                h5{
+                color:$sub-color;
+                text-transform: capitalize;
+                font-size: 25px;
+                margin-bottom: 15px;
+                }
+                .number{
+                    display: flex;
+                    justify-content: space-between;
+                    gap:15px;
+                    button,input{
+                        padding:10px;
+                        border-radius: 8px;
+                    }
+                    input{
+                        flex:1;
+                        width: 10px;
+                        text-align: center;
+                        border: 1px solid $border-color;
+                    }
+                    button{
+                        flex:6;
+                        color:$white;
+                        background-color: $blue-color;
+                        outline: none;
+                        border: none;    
+                    }
+                }
+            }
+            .similarproduct{
+                background-color: $main-color;
+                padding:10px;
+                h4{
+                    margin: 10px 0;
+                }
+                .content{
+                    border:1px solid $border-color;
+                    background-color: $white;
+                    padding:10px;
+                    display: flex;
+                    gap:10px;
+                    border-radius: 4px;
+                    .box{
+                        img{
+                            width: 85px;
+                            max-width: 100%;
+                            background-color: $main-color;
+                            padding: 5px;
+                            border-radius: 4px;
+                        }
+                        h4{
+                            display: flex;
+                            gap: 10px;
+                            text-transform: uppercase;
+                            color:$sub-color;
+                        }
+                        p{
+                            font-size: 12px;
+                        }
+                    }
+
+                }
+            }
+        }
+        .aside{
+            align-self: start;
+            .box{
+                display: flex;
+                gap:20px;
+                align-items: center;
+                padding:20px 0;
+                border-bottom: $thin-border;
+                p{
+                    color: $sub-color;
+                }
+                img{
+                    width: 50px;
+                    max-width: 100%;   
+                }
+            }
+        }
+    }
+}
